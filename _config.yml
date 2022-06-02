@@ -80,10 +80,10 @@ theme_mode:    [dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+img_cdn: https://cdn.klabsdev.com
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://media-exp1.licdn.com/dms/image/C4E03AQGB69wjxHBNqg/profile-displayphoto-shrink_200_200/0/1611528145743?e=1659571200&v=beta&t=Qdjl1sYO8BRjpY1btRGpr6YZM_yJX-L3WwVhvqiDag4
+avatar: /klabsdev/images/pfp.jpg
 
 # boolean type, the global switch for ToC in posts.
 toc: true
