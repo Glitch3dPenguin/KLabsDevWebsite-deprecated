@@ -16,39 +16,39 @@ lang: en
 prefer_datetime_locale:
 
 # Change to your timezone › http://www.timezoneconverter.com/cgi-bin/findzone/findzone
-timezone:
+timezone: America/Chicago
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy                          # the main title
+title: KLabsDev                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
+tagline: Kulik Labs Development   # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+  This is my everything site. This will contain my past and current work, Documentation on how my servers work. Details on any of my digital projects.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: ''
+url: 'https://KLabsDev.com'
 
 github:
-  username: github_username             # change to your github username
+  username: Glitch3dPenguin            # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: Glitch3dPenguin            # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@doamin.com             # change to your email address
+  name: Max Kulik
+  email: pearelectronics@live.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/Glitch3dPenguin      # change to your twitter homepage
+    - https://github.com/Glitch3dPenguin       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/max-kulik
 
 google_site_verification:               # fill in to your verification string
 
