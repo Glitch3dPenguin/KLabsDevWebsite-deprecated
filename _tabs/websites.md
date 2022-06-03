@@ -8,11 +8,11 @@ order: 6
 A collection of websites that I have worked on in some way. Each section will showcase the site that I have worked on and the technologies that I used to build it.
 
 ## Pole Factory MKE
-[![Pole Factory MKE Screenshot](https://cdn.klabsdev.com/klabsdev/images/ScreenPoleFactoryMKE.PNG)](https://bluelineautosalesandservice.com/)
+[![Pole Factory MKE Screenshot](https://cdn.klabsdev.com/klabsdev/images/ScreenPoleFactoryMKE.PNG)](https://polefactorymke.com/)
 Pole Factory MKE is a dance studio located Downtown Milwaukee. This site hosts a suite of features to allow customers to buy into classes on a set schedule by the studio owner. Much of the initial design work and framework was assembled by myself. This site is hosed by KLabsDev servers currently. Pole Factory MKE's site also utilizes Twilio's SMS API to send text alerts to it's customers. In addition to SMS alerts, e-mails to update customers on their class schedule is also utilized with SMTP under seninblue's API proxied through Cloudflair. Then payments are accepted under the Stripe API. The website framework is based off Wordpress.
 
 ## Blueline Auto Sales
-[![Blue Line Auto Screenshot](https://cdn.klabsdev.com/klabsdev/images/ScreenBlueLineAuto.PNG)](https://polefactorymke.com/)
+[![Blue Line Auto Screenshot](https://cdn.klabsdev.com/klabsdev/images/ScreenBlueLineAuto.PNG)](https://bluelineautosalesandservice.com/)
 Blue Line Auto Sales and Service is a local car wholesaler local to the Metro Milwaukee Area. Their website needs are a listing service to allow for their employee's the ability to post and list their current inventory of vehicles for sale. This was handled with a MySQL database and the Wordpress framework. This website is also proxied through Cloudflare to cache images and speed up loading time since each listing had 10+ images. This website is still hosted and managed by KLabsDev.
 
 ## USI Drilling
