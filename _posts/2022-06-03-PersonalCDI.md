@@ -6,19 +6,19 @@ tags: [cdn,welcome,backbblaze,cloudflare,homelab]
 ---
 
 ## Introduction
-When building this site and moving away from my old static HTML portfolio, I wanted to have a way to manage all of my content and allow for any of my websites or services to pull from the same location. I also wanted a way to pull it from an external location to allow my content to be servered faster to more clients. I also needed this option to be affordable since this is a home lab. 
+When building this site and moving away from my old static HTML portfolio, I wanted to have a way to manage all of my content and allow for any of my websites or services to pull from the same location. I also wanted a way to pull it from an external location to allow my content to be served faster to more clients. I also needed this option to be affordable since this is a home lab.  
 
 ## Backblase for Storage
-After doing my research and weighing my options I made my choice. Backblaze offers dirt cheap bucket storage and allows for 10GB up upload a day before they charge. If you need to download directly from the bucket you get 1GB before you are charged. Class B Trasactions are free for the first 2,500. And finally Class C Transactions are free for the first 2,500. The best part is all those limits are daily. 
+After doing my research and weighing my options I made my choice. Backblaze offers dirt cheap bucket storage and allows for 10GB up upload a day before they charge. If you need to download directly from the bucket you get 1GB before you are charged. Class B Transactions are free for the first 2,500. And finally, Class C Transactions are free for the first 2,500. The best part is all those limits are daily. 
 
 This is what Backblaze's caps look like on the date of writing:
 ![Screenshot showing Backblaze caps](https://cdn.klabsdev.com/klabsdev/images/BackblazeBucketCaps.png)
 
 ## Cloudflare to Proxy
-Next, I decided to use Cloudflare to proxy my traffic. Since Cloudflare will cache some of the content it will reduce some of the transactions used on Backblaze and serve pages and content even faster! It was also a conveinet option for me to use since I have already been using their domain and proxy services for most of my public endpoints and websites. 
+Next, I decided to use Cloudflare to proxy my traffic. Since Cloudflare will cache some of the content it will reduce some of the transactions used on Backblaze and serve pages and content even faster! It was also a convenient option for me to use since I have already been using their domain and proxy services for most of my public endpoints and websites.
 
 ## Setting up Backblaze
-**1)** First step in setting up Backblaze to use bucket storage is to create an account.
+**1)** The first step in setting up Backblaze to use bucket storage is to create an account.
 
 **2)** Navigate to [Backblaze](https://backblaze.com) and choose the *"B2 Cloud Storage"* option at the top of the page. Then at the top right, click *"Sign Up"*.
 ![Account Signup](https://cdn.klabsdev.com/klabsdev/images/BackblazeSignup.gif)
@@ -29,7 +29,7 @@ Make sure you choose "Public", "Disbale", "Disable" respectively.
 
 **4)** Once the Bucket has been created you'll need to adjust some more settings. First choose *"Lifecycle Settings"* and chooose *"Keep only the last version of the file"*.
 ![Change Lifecycle Settings](https://cdn.klabsdev.com/klabsdev/images/BackblazeLifecycleSettings.gif)
-Now click the big "Update Bucket" button. Now for the Last setting. 
+Now click the big "Update Bucket" button. Now, for the Last setting. 
 
 **5)** In the same area you will need to click on the *"CORS Rules"* option and set it to *"Share everything in this bucket with every origin"*.
 ![Change CORS Rules](https://cdn.klabsdev.com/klabsdev/images/backblazeCORS.gif)
@@ -53,6 +53,8 @@ Now click the big "Update Bucket" button. Now for the Last setting.
 **4)** You should now be able to see your test image you uploaded by visiting https://cdn.yourdomain.com/file/yourbucketname/test.jpg
 
 ## Conclusion
-There are many ways to go about building out your own CDN. Different options all have their advantages and disadvantages. The goal for this project was to create the cheapest personal CDN as possible. If anything is not working or you need help feel free to hit me up on Disocrd Glitch3dPenguin#8857 or on Twitter @Glitch3dPenguin.
+There are many ways to go about building out your CDN. Different options all have their advantages and disadvantages. The goal of this project was to create the cheapest personal CDN possible. If anything is not working or you need help feel free to hit me up on Discord Glitch3dPenguin#8857 or Twitter @Glitch3dPenguin.
 
 Thanks for reading!
+
+Written By: Max Kulik
