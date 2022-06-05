@@ -26,7 +26,7 @@ title: KLabsDev                          # the main title
 tagline: Kulik Labs Development  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  This is my everything site. This will contain my past and current work, Documentation on how my servers work. Details on any of my digital projects.
+  My portfolio and project site. 
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://KLabsDev.com'
