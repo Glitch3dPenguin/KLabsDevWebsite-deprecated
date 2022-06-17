@@ -3,10 +3,11 @@ title: Proxmox Dark Mode
 date: 2022-06-17
 categories: [Proxmox, Home Lab]
 tags: [home lab,Dark Mode,Proxmox,]
-image:
-  path: /klabsdev/images/ProxmoxExample.png
-  alt: Proxmox dark mode example from PVEDiscordDark
 ---
+
+![Desktop View](/klabsdev/images/ProxmoxExample.png){: width="972" height="589" }
+_My Dashboard With PVE Discord Dark_
+
 ## Introduction
 Poxmox’s UI is informational, functional, and looks great! The only problem is that it’s also blinding. When I am up late working on a project for hours, the worst thing is going from my dark themed terminal, web browser, windows machine to a flashbang like Proxmox panel. Now with only a few lines in the terminal, we can solve that problem! 
 
