@@ -40,4 +40,4 @@ Written By: Max Kulik
 
 Sources:
 <br>
-Welbyte Github - <https://github.com/Weilbyte/PVEDiscordDark](https://github.com/Weilbyte/PVEDiscordDark>
+Welbyte Github - [https://github.com/Weilbyte/PVEDiscordDark](https://github.com/Weilbyte/PVEDiscordDark)
