@@ -21,7 +21,7 @@ wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscord
 
 **Step 3:** Next we will need to mark the downloaded file as executable:
 ```console
-chmod u+x PVE.sh
+chmod u+x PVEDiscordDark.sh
 ```
 
 **Step 4:** Now we run it!
