@@ -23,39 +23,39 @@ The version that I used was ``debian-11-genericcloud-amd64-20221205-1220.qcow2``
 ## Step 2: Create OCI Bucket
 Next we will need to start getting our image ready for OCI. Once logged into your OCI Dashboard you will need to navigate to Storage -> Buckets. If you don’t already have one, create a new bucket for your custom images by clicking “Create New”. These are the options I used: 
 
-![Bucket Settings](https://share.klabsdev.com/files//ntxNiaQe.png)
+![Bucket Settings](/klabsdev/images/RunProxmoxOnOCI/1.png)
 
 ## Step 3: Upload Debian to Bucket
 Now that you have a bucket created, we need to click on it to open it up. Once you are in your bucket, scroll down and choose “Upload” under objects. 
 
-![Upload in Objects](https://share.klabsdev.com/files//rbhMPSKQ.png)
+![Upload in Objects](/klabsdev/images/RunProxmoxOnOCI/2.png)
 
 Upload the Debian image from Step 1. You can name it whatever you like.
 
 ## Step 4: Make Custom Image
 With the Debian image uploaded, it is time to convert that to an Oracle Cloud Image. To do this Navigate to Compute -> Custom Images. Once there choose “Import Image”. This is an example of the import settings you should emulate: 
 
-![Custom Image settings](https://share.klabsdev.com/files//WwqXhqUV.png)
+![Custom Image settings](/klabsdev/images/RunProxmoxOnOCI/3.png)
 
 This will take a few mins to provision. 
 
 ## Step 5: Deploy Custom Image
 Now that our Custom Image has been provisioned, we can now create our custom image. Navigate to Compute -> Instances and choose “Create Instance”. On the “Create compute instance” page start off by creating a name for your Proxmox instance. I called mine “Proxmox”. 
 
-![Name Instance](https://share.klabsdev.com/files//XNDySKdB.png)
+![Name Instance](/klabsdev/images/RunProxmoxOnOCI/4.png)
 
 Then choose your Availability Domain
 
-![Choose availability domain](https://share.klabsdev.com/files//XeKZWdZx.png)
+![Choose availability domain](/klabsdev/images/RunProxmoxOnOCI/5.png)
 
 Then When it comes time to choose your Image make sure to choose “Custom Images” and pick the Debian one that we created. Next, choose your shape. You CAN run this on OCI’s “Always Free-eligible” Tier if you’d like. 
 
-![Choose image and shape](https://share.klabsdev.com/files//xyqkOuY.png)
+![Choose image and shape](/klabsdev/images/RunProxmoxOnOCI/6.png)
 
 (Important Note Here) If you would like to run this on Ampere, you can do this by using all the previous steps but using the Debian arm64 Image! 
 Next, select all your networking settings. You can make a separate subnet for this Proxmox machine if you’d like but it’s not necessary. 
 
-![Choose image networking](https://share.klabsdev.com/files//vqbwVoL.png)
+![Choose image networking](/klabsdev/images/RunProxmoxOnOCI/7.png)
 
 Finally, make sure to download your SSH Keys. This is what will allow you to SSH into your machine once it’s up and running! 
 Go ahead and Choose “Create” to start up your new Debian image. Wait for OCI to finish provisioning your machine and move on to step 6. 
@@ -107,7 +107,7 @@ I changed it to look like this:
 
 Then once that is finished you will need to reboot your instance from the OCI dashboard.
 
-![Reboot instance](https://share.klabsdev.com/files//HRKouxKa.png)
+![Reboot instance](/klabsdev/images/RunProxmoxOnOCI/8.png)
 
 Once the Reboot has finished, SSH back into your instance and verify the change has been made with this command: 
 
@@ -139,18 +139,18 @@ Next we need to install the Proxmox VE kernel:
 ``sudo apt install pve-kernel-5.15``
 
 > If apt asks if you would like to install the new version of grub, be sure to select “Keep the local version currently installed”. We will be manually updating grub later. 
-![Keep local version](https://share.klabsdev.com/files//jPABvYqJ.png)
+![Keep local version](/klabsdev/images/RunProxmoxOnOCI/9.png)
 {: .prompt-warning }
 
 Once the Kernel has finished installing make sure to reboot the system using OCI dashboard.
-![Reboot instance](https://share.klabsdev.com/files//HRKouxKa.png)
+![Reboot instance](/klabsdev/images/RunProxmoxOnOCI/10.png)
 
 Once the system has rebooted, SSH back into your instance and you can Install the Proxmox VE packages.
 
 ``sudo apt install proxmox-ve postfix open-iscsi``
 
 > Choose “Local only” for postfix when prompted. 
-![Choose Local only](https://share.klabsdev.com/files//FODjHBEv.png)
+![Choose Local only](/klabsdev/images/RunProxmoxOnOCI/11.png)
 {: .prompt-warning }
 
 After all the packages have been installed, it is time to remove the previous Debian Kernel and update Grub:
@@ -185,7 +185,7 @@ In the Proxmox Web UI, go to your machine’s network settings. You will notice 
 
 Fill in the sections below to match the Virtual Bridge to you OCI dashboard. Pictured below are my settings:
 
-![Create Network bridge adapter](https://share.klabsdev.com/files//OrMcPJcQ.png)
+![Create Network bridge adapter](/klabsdev/images/RunProxmoxOnOCI/12.png)
 
 Reboot the instance one more time using the OCI dashboard, **NOT THE PROXMOX WEB UI**, after these changes have been made. Once the reboot has finished, you will not be able to SSH to the instance OR access the WEB UI. 
 
@@ -195,7 +195,7 @@ In the OCI Dashboard, select your Instance and open **“Console connection”**
 
 Then click on **“Launch Cloud Shell Connection”**
 
-![Launch OCI Cloud Shell connection](https://share.klabsdev.com/files//UEtvdpQv.png)
+![Launch OCI Cloud Shell connection](/klabsdev/images/RunProxmoxOnOCI/13.png)
 
 It will take a few mins for the console to open, but once it does log in using the “root” user and the password you had created in **Step 7**. 
 
@@ -206,7 +206,7 @@ Once logged in, get your interface names:
 Make note of these. 
 For me I had 3: ``lo``, ``ens3``, and ``vmbr0``. You will notice that both ``ens3`` and ``vmbr0`` are reporting as down. 
 
-![Example of network interface list](https://share.klabsdev.com/files//fDgUApLc.png)
+![Example of network interface list](/klabsdev/images/RunProxmoxOnOCI/14.png)
 
 To fix this we will need to edit ``/etc/network/interfaces``:
 
